@@ -20,6 +20,7 @@ RUN ["apk", "add", "php8-simplexml"]
 
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY docker-entrypoint.sh /
+RUN ["chmod", "+x", "/docker-entrypoint.sh"]
 
 CMD /bin/sh -c "composer update && composer symfony:dump-env prod"
 ENTRYPOINT /docker-entrypoint.sh
