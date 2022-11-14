@@ -20,4 +20,4 @@ RUN ["apk", "add", "php8-simplexml"]
 
 COPY nginx.conf /etc/nginx/nginx.conf
 
-CMD ["composer", "update", "&&", "composer", "symfony:dump-env", "prod", "&&", "nginx", "-p", "/app/public"]
+CMD ["composer", "update", "&&", "composer", "symfony:dump-env", "prod", "&&", "nginx", "-p /app/public"]
