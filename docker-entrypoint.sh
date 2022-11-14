@@ -1,3 +1,3 @@
 #!/bin/sh
 
-nginx -p /app/public
+nginx -g "daemon off;"
