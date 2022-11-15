@@ -7,7 +7,7 @@ RUN apt-get clean && apt-get update && apt-get install -y \
     libxml2-dev
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN docker-php-ext-install pdo_mysql ctype xml dom xmlwriter session simplexml
+RUN docker-php-ext-install pdo_mysql ctype xml dom xmlwriter session
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
