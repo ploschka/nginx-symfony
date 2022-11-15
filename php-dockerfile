@@ -4,7 +4,8 @@ WORKDIR /app
 
 RUN apk update
 RUN apk add oniguruma
-RUN docker-php-ext-install  pdo_mysql mbstring zip exif pcntl curl tokenizer ctype xml dom xmlwriter session
+RUN docker-php-ext-install  pdo_mysql zip exif pcntl curl tokenizer ctype xml dom xmlwriter session
+RUN apk add php8-mbstring
 RUN apk add php8-simplexml
 RUN apk add composer
 
