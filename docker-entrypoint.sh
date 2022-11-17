@@ -1,3 +1,3 @@
-$env = $1
+#!/bin/bash
 
-/bin/sh -c "composer update && composer symfony:dump-env $1 && php-fpm"
+composer update && composer symfony:dump-env $1 && php-fpm

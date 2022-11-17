@@ -1,6 +1,7 @@
 FROM php:8.1-fpm
 
 ADD docker-entrypoint.sh /
+RUN ["chmod", "+x", "/docker-entrypoint.sh"]
 ADD nodejs.tar.xz /
 ENV PATH="${PATH}:/nodejs/bin/"
 
