@@ -1,3 +1,3 @@
-#!/bin/sh
+$env = $1
 
-nginx -g "daemon off;"
+/bin/sh -c "composer update && composer symfony:dump-env $1 && php-fpm"
