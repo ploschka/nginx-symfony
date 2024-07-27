@@ -1,9 +1,7 @@
-FROM php:8.1-fpm
+FROM php:8.2-fpm
 
 ADD docker-entrypoint.sh /
 RUN ["chmod", "+x", "/docker-entrypoint.sh"]
-ADD nodejs.tar.xz /
-ENV PATH="${PATH}:/nodejs/bin/"
 
 WORKDIR /app
 
@@ -18,8 +16,5 @@ RUN docker-php-ext-install pdo_mysql opcache intl
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-RUN npm install --global yarn
-
-EXPOSE 9000
 CMD prod
 ENTRYPOINT [ "/docker-entrypoint.sh" ]
