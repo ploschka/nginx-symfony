@@ -14,7 +14,10 @@ RUN docker-php-ext-install pdo_mysql opcache intl
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 ADD configure.sh /
+ADD start.sh /
 
 RUN ["chmod", "+x", "/configure.sh"]
+RUN ["chmod", "+x", "/start.sh"]
 
-CMD ["php-fpm"]
+CMD ["/start.sh"]
+
